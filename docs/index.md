@@ -31,7 +31,7 @@ features:
     details: 使用日志、源码断点、Unreal Insights、网络测试和固定场景验证结论。
 ---
 
-<span class="status-line">当前：Day 01 已完成，知识网站基线建设中</span>
+<span class="status-line">网站已上线 · Day 01 博客待学习者撰写</span>
 
 ## 这个网站记录什么
 
