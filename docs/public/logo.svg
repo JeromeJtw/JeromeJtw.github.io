@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Project Aegis shield</title>
+  <desc id="desc">A geometric shield containing the letter A.</desc>
+  <defs>
+    <linearGradient id="bg" x1="32" y1="24" x2="220" y2="232" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#14b8a6"/>
+      <stop offset="0.52" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#bg)" d="M128 14 224 48v67c0 59-38 106-96 127-58-21-96-68-96-127V48l96-34Z"/>
+  <path fill="#08111f" fill-opacity=".92" d="m128 54 58 132h-31l-12-29H91l-12 29H48l58-132h22Zm3 75-14-36-15 36h29Z"/>
+  <path fill="none" stroke="#fff" stroke-opacity=".72" stroke-width="6" d="M128 25 212 55v60c0 51-31 92-84 113-53-21-84-62-84-113V55l84-30Z"/>
+</svg>

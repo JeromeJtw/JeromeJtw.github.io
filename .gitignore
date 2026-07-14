@@ -1,0 +1,15 @@
+node_modules/
+.vitepress/
+docs/.vitepress/cache/
+docs/.vitepress/dist/
+docs/.vitepress/temp/
+*.local
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+*.mp4
+*.mov
+*.mkv
+*.avi
