@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jeromejtw.github.io/ue-learning-portfolio/sitemap.xml
+Sitemap: https://jeromejtw.github.io/sitemap.xml

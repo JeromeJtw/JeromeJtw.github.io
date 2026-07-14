@@ -38,10 +38,19 @@
 }
 
 .portfolio-card {
+  display: block;
   padding: 18px;
   border: 1px solid var(--vp-c-divider);
   border-radius: 14px;
   background: var(--vp-c-bg-soft);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+a.portfolio-card:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-2px);
 }
 
 .portfolio-card h3 {
