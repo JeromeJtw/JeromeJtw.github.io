@@ -37,7 +37,7 @@
   margin: 24px 0;
 }
 
-.portfolio-card {
+.vp-doc a.portfolio-card {
   display: block;
   padding: 18px;
   border: 1px solid var(--vp-c-divider);
@@ -45,16 +45,26 @@
   background: var(--vp-c-bg-soft);
   color: inherit;
   text-decoration: none;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-a.portfolio-card:hover {
+.vp-doc a.portfolio-card:hover {
   border-color: var(--vp-c-brand-1);
+  background: var(--vp-c-bg-elv);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  text-decoration: none;
   transform: translateY(-2px);
+}
+
+.vp-doc a.portfolio-card:focus-visible {
+  outline: 2px solid var(--vp-c-brand-1);
+  outline-offset: 3px;
+  text-decoration: none;
 }
 
 .portfolio-card h3 {
   margin: 0 0 8px;
+  color: var(--vp-c-brand-1);
   font-size: 16px;
 }
 
