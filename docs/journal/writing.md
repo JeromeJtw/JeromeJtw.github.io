@@ -50,9 +50,9 @@ outline: deep
 
 ## 写作步骤
 
-1. 从 `docs/drafts/day-log-template.md` 复制一份模板。
-2. 将新文件放入 `docs/journal/`，使用 `yyyy-mm-dd-topic.md` 命名。
-3. 先填写事实和证据，再写个人理解，避免凭记忆补结论。
+1. 从 `docs/drafts/day-log-template.md` 复制一份模板，并在 `docs/drafts/` 中使用 `yyyy-mm-dd-topic.md` 命名。
+2. 先填写事实和证据，再写个人理解，避免凭记忆补结论；草稿阶段不会进入网站构建产物。
+3. 正文通过事实、结构和公开安全审查后，将文件移动到 `docs/journal/`。
 4. 在 `docs/journal/index.md` 中加入文章链接。
 5. 在所属领域首页或索引中加入该文章。
 6. 本地执行 `pnpm.cmd docs:build`，确认无死链和构建错误。
