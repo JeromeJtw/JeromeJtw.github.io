@@ -101,6 +101,7 @@ export default withMermaid({
           text: '学习日志',
           items: [
             { text: '全部日志', link: '/journal/' },
+            { text: 'Day 01 · UE 工程基线', link: '/journal/2026-07-14-ue-day01-engineering-baseline' },
             { text: '博客写作流程', link: '/journal/writing' }
           ]
         }

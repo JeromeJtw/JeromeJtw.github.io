@@ -9,6 +9,10 @@ description: UE 5.8 C++ 客户端工程学习、Project Aegis 与面试展示入
 
 本领域记录 UE 客户端岗位所需的构建系统、运行模型、Gameplay、GAS、AI、网络、资源、测试、性能和源码阅读能力。所有结论尽量关联 Project Aegis 中的代码、资产、日志、Trace 或演示证据。
 
+## 最新学习日志
+
+- [Day 01：基于 Third Person 模板建立可恢复、可构建、可调试的 UE 5.8 C++ 工程基线](/journal/2026-07-14-ue-day01-engineering-baseline)
+
 ## 快速入口
 
 <div class="portfolio-grid">

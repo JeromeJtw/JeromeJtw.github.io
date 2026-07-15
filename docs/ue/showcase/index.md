@@ -35,12 +35,12 @@ outline: deep
 
 | 能力 | 展示入口 | 当前状态 |
 |---|---|---|
-| 构建系统与运行模型 | [学习路线](/ue/roadmap/) / [知识体系](/ue/knowledge/) | Day 01 已完成，后续持续补充 |
+| 构建系统与运行模型 | [Day 01 工程基线](/journal/2026-07-14-ue-day01-engineering-baseline) / [学习路线](/ue/roadmap/) | 完整文章已发布 |
 | 项目架构 | [系统设计](/ue/engineering/design/) | 随实现逐步形成 |
 | 调试与排障 | [Bug 与排障](/ue/engineering/debugging/) | 已建立方法与证据规范 |
 | 性能分析 | [Unreal Insights](/ue/engineering/performance/) | 待性能课程形成案例 |
 | 源码深度 | [Lyra / GAS 源码阅读](/ue/source-reading/) | 待课程推进 |
-| 演示证据 | [演示视频](/ue/videos/) | Day 01 本地证据完成 |
+| 演示证据 | [演示视频](/ue/videos/) | Day 01 源码断点视频已嵌入文章 |
 | 面试表达 | [UE 面试与项目复盘](/ue/interviews/) | 按课程持续积累 |
 
 ## 后续里程碑

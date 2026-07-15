@@ -13,3 +13,6 @@ Thumbs.db
 *.mov
 *.mkv
 *.avi
+
+# Allow the reviewed Day 01 debugging demo to be published by GitHub Pages.
+!docs/public/media/ue/day01/Day01_DebugGame_Breakpoint_20260714.mp4
