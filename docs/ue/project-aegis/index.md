@@ -15,6 +15,7 @@ Project Aegis 是贯穿整个学习计划的第三人称动作客户端 Showcase
 - Git LFS、忽略规则、私有仓库和干净 Clone 恢复链路已经验证。
 - Development Editor 与 DebugGame Editor 均可构建运行。
 - 项目模块 DLL/PDB 能够加载，`StartupModule()` 源码断点可命中。
+- `AegisCore` Runtime 模块已建立，`ProjectAegis → AegisCore` 直接依赖与 Non-Unity 独立编译已经验证。
 - 主分支保持可运行，当前开发仓库暂时私有。
 
 ## 目标能力

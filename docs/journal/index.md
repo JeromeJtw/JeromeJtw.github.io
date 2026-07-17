@@ -11,6 +11,7 @@ description: 由学习者亲自撰写的跨领域学习时间线。
 
 | 日期 | 领域 | 主题 | 状态 |
 |---|---|---|---|
+| 2026-07-17 | UE | [Day 02：AegisCore、UBT/UHT 与 Unity Build 边界](/journal/2026-07-17-ue-day02-ubt-uht-module-boundary) | 已发布 |
 | 2026-07-14 | UE | [Day 01：UE 5.8 C++ 工程基线](/journal/2026-07-14-ue-day01-engineering-baseline) | 已发布 |
 
 ## 领域标识
