@@ -103,6 +103,7 @@ export default withMermaid({
             { text: '全部日志', link: '/journal/' },
             { text: 'Day 01 · UE 工程基线', link: '/journal/2026-07-14-ue-day01-engineering-baseline' },
             { text: 'Day 02 · UBT/UHT 与模块边界', link: '/journal/2026-07-17-ue-day02-ubt-uht-module-boundary' },
+            { text: 'Day 03 · UObject、反射与 CDO', link: '/journal/2026-07-18-ue-day03-uobject-reflection-cdo' },
             { text: '博客写作流程', link: '/journal/writing' }
           ]
         }

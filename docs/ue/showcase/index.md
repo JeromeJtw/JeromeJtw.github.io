@@ -30,6 +30,7 @@ outline: deep
 - 项目模块 DLL/PDB、符号加载和源码断点；
 - 模块 Startup/Shutdown 生命周期日志；
 - `AegisCore` Runtime 模块、`ProjectAegis → AegisCore` 直接依赖和 Non-Unity 独立编译；
+- `UAegisDeveloperSettings`、UHT 反射生成物、Config/蓝图默认值与四对象 CDO 实验；
 - 主分支与远端同步、提交可回滚。
 
 ## 精选工程入口
@@ -37,11 +38,12 @@ outline: deep
 | 能力 | 展示入口 | 当前状态 |
 |---|---|---|
 | 构建系统与运行模型 | [Day 02 UBT/UHT 与模块边界](/journal/2026-07-17-ue-day02-ubt-uht-module-boundary) / [Day 01 工程基线](/journal/2026-07-14-ue-day01-engineering-baseline) / [学习路线](/ue/roadmap/) | Day 01、Day 02 完整文章已发布 |
+| UObject 与默认值模型 | [Day 03 UObject、反射与 CDO](/journal/2026-07-18-ue-day03-uobject-reflection-cdo) | 已验证原生/蓝图 CDO、Config、Class Defaults 与实例关系 |
 | 项目架构 | [系统设计](/ue/engineering/design/) | 随实现逐步形成 |
 | 调试与排障 | [Bug 与排障](/ue/engineering/debugging/) | 已建立方法与证据规范 |
 | 性能分析 | [Unreal Insights](/ue/engineering/performance/) | 待性能课程形成案例 |
 | 源码深度 | [Lyra / GAS 源码阅读](/ue/source-reading/) | 待课程推进 |
-| 演示证据 | [演示视频](/ue/videos/) | Day 01 源码断点和 Day 02 模块边界视频已嵌入文章 |
+| 演示证据 | [演示视频](/ue/videos/) | Day 01～Day 03 关键证据视频已嵌入文章 |
 | 面试表达 | [UE 面试与项目复盘](/ue/interviews/) | 按课程持续积累 |
 
 ## 后续里程碑

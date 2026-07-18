@@ -16,6 +16,7 @@ Project Aegis 是贯穿整个学习计划的第三人称动作客户端 Showcase
 - Development Editor 与 DebugGame Editor 均可构建运行。
 - 项目模块 DLL/PDB 能够加载，`StartupModule()` 源码断点可命中。
 - `AegisCore` Runtime 模块已建立，`ProjectAegis → AegisCore` 直接依赖与 Non-Unity 独立编译已经验证。
+- `UAegisDeveloperSettings` 已接入反射与 Config，并通过原生/蓝图 CDO 和实例实验验证默认值来源。
 - 主分支保持可运行，当前开发仓库暂时私有。
 
 ## 目标能力

@@ -19,3 +19,6 @@ Thumbs.db
 
 # Allow the reviewed Day 02 module-boundary demo to be published by GitHub Pages.
 !docs/public/media/ue/day02/Day02_AegisCore_Module_20260717.mp4
+
+# Allow the reviewed Day 03 UObject/CDO demo to be published by GitHub Pages.
+!docs/public/media/ue/day03/Day03_UObject_CDO_20260718.mp4
