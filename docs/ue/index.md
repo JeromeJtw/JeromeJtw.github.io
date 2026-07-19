@@ -11,6 +11,7 @@ description: UE 5.8 C++ 客户端工程学习、Project Aegis 与面试展示入
 
 ## 最新学习日志
 
+- [Day 04：对象指针、Outer 与 GC 可达性](/journal/2026-07-19-ue-day04-object-pointers-gc)
 - [Day 03：从 UObject 反射到 CDO 与默认值来源、GC](/journal/2026-07-18-ue-day03-uobject-reflection-cdo)
 - [Day 02：从 AegisCore 模块到 UBT/UHT 与 Unity Build 边界](/journal/2026-07-17-ue-day02-ubt-uht-module-boundary)
 - [Day 01：基于 Third Person 模板建立可恢复、可构建、可调试的 UE 5.8 C++ 工程基线](/journal/2026-07-14-ue-day01-engineering-baseline)
