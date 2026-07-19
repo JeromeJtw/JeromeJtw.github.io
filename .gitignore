@@ -22,3 +22,6 @@ Thumbs.db
 
 # Allow the reviewed Day 03 UObject/CDO demo to be published by GitHub Pages.
 !docs/public/media/ue/day03/Day03_UObject_CDO_20260718.mp4
+
+# Allow the reviewed Day 04 object-pointer/GC demo to be published by GitHub Pages.
+!docs/public/media/ue/day04/Day04_ObjectPointers_GC_20260719.mp4
