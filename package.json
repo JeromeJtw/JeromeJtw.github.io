@@ -9,9 +9,11 @@
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
+    "check:journal": "node scripts/check-journal-publication.mjs",
+    "test:journal": "node --test scripts/check-journal-publication.test.mjs",
+    "docs:build": "pnpm check:journal && vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "check": "vitepress build docs"
+    "check": "pnpm test:journal && pnpm docs:build"
   },
   "devDependencies": {
     "mermaid": "11.16.0",
