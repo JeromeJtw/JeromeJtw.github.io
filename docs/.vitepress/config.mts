@@ -104,6 +104,7 @@ export default withMermaid({
             { text: 'Day 01 · UE 工程基线', link: '/journal/2026-07-14-ue-day01-engineering-baseline' },
             { text: 'Day 02 · UBT/UHT 与模块边界', link: '/journal/2026-07-17-ue-day02-ubt-uht-module-boundary' },
             { text: 'Day 03 · UObject、反射与 CDO', link: '/journal/2026-07-18-ue-day03-uobject-reflection-cdo' },
+            { text: 'Day 04 · 对象指针、Outer 与 GC', link: '/journal/2026-07-19-ue-day04-object-pointers-gc' },
             { text: '博客写作流程', link: '/journal/writing' }
           ]
         }
