@@ -5,7 +5,7 @@ description: UE 客户端工程能力路线、阶段目标与验收状态。
 
 # 学习路线与进度
 
-<span class="status-line">Day 04 已完成 · 下一步 Day 05</span>
+<span class="status-line">Day 05 已完成 · 下一步 Day 06</span>
 
 ## 长期目标
 

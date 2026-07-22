@@ -25,3 +25,6 @@ Thumbs.db
 
 # Allow the reviewed Day 04 object-pointer/GC demo to be published by GitHub Pages.
 !docs/public/media/ue/day04/Day04_ObjectPointers_GC_20260719.mp4
+
+# Allow the reviewed Day 05 Actor/Component lifecycle demo to be published by GitHub Pages.
+!docs/public/media/ue/day05/Day05_Actor_Component_Lifecycle_20260722.mp4

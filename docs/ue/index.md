@@ -11,6 +11,7 @@ description: UE 5.8 C++ 客户端工程学习、Project Aegis 与面试展示入
 
 ## 最新学习日志
 
+- [Day 05：Actor 与 Component 生命周期](/journal/2026-07-22-ue-day05-actor-component-lifecycle)
 - [Day 04：对象指针、Outer 与 GC 可达性](/journal/2026-07-19-ue-day04-object-pointers-gc)
 - [Day 03：从 UObject 反射到 CDO 与默认值来源、GC](/journal/2026-07-18-ue-day03-uobject-reflection-cdo)
 - [Day 02：从 AegisCore 模块到 UBT/UHT 与 Unity Build 边界](/journal/2026-07-17-ue-day02-ubt-uht-module-boundary)

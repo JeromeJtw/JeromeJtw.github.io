@@ -11,6 +11,7 @@ description: 由学习者亲自撰写的跨领域学习时间线。
 
 | 日期 | 领域 | 主题 | 状态 |
 |---|---|---|---|
+| 2026-07-22 | UE | [Day 05：Actor 与 Component 生命周期](/journal/2026-07-22-ue-day05-actor-component-lifecycle) | 已发布 |
 | 2026-07-19 | UE | [Day 04：对象指针、Outer 与 GC 可达性](/journal/2026-07-19-ue-day04-object-pointers-gc) | 已发布 |
 | 2026-07-18 | UE | [Day 03：UObject、反射、CDO 与默认值来源](/journal/2026-07-18-ue-day03-uobject-reflection-cdo) | 已发布 |
 | 2026-07-17 | UE | [Day 02：AegisCore、UBT/UHT 与 Unity Build 边界](/journal/2026-07-17-ue-day02-ubt-uht-module-boundary) | 已发布 |
