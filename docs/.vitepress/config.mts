@@ -106,6 +106,7 @@ export default withMermaid({
             { text: 'Day 03 · UObject、反射与 CDO', link: '/journal/2026-07-18-ue-day03-uobject-reflection-cdo' },
             { text: 'Day 04 · 对象指针、Outer 与 GC', link: '/journal/2026-07-19-ue-day04-object-pointers-gc' },
             { text: 'Day 05 · Actor 与 Component 生命周期', link: '/journal/2026-07-22-ue-day05-actor-component-lifecycle' },
+            { text: 'Day 06 · Delegate、Timer、日志与断言', link: '/journal/2026-07-23-ue-day06-delegate-timer-logging-assertions' },
             { text: '博客写作流程', link: '/journal/writing' }
           ]
         }
