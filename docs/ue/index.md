@@ -11,6 +11,7 @@ description: UE 5.8 C++ 客户端工程学习、Project Aegis 与面试展示入
 
 ## 最新学习日志
 
+- [Day 07：Week 1 对象运行模型实验室整合与验证](/journal/2026-07-25-ue-day07-week1-object-runtime-lab)
 - [Day 06：Delegate、Timer、日志与断言](/journal/2026-07-23-ue-day06-delegate-timer-logging-assertions)
 - [Day 05：Actor 与 Component 生命周期](/journal/2026-07-22-ue-day05-actor-component-lifecycle)
 - [Day 04：对象指针、Outer 与 GC 可达性](/journal/2026-07-19-ue-day04-object-pointers-gc)

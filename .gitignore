@@ -31,3 +31,6 @@ Thumbs.db
 
 # Allow the reviewed Day 06 delegate/timer/console/assertion demo to be published by GitHub Pages.
 !docs/public/media/ue/day06/Day06_Delegate_Timer_Console_Assertions_20260723.mp4
+
+# Allow the reviewed Week 1 object-runtime lab milestone video to be published by GitHub Pages.
+!docs/public/media/ue/day07/Day07_Week1_Object_Runtime_Lab_20260725.mp4

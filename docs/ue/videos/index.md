@@ -17,6 +17,7 @@ description: Project Aegis 的短证据、周里程碑和最终演示。
 | Day 04 证据 | [强引用、裸指针、弱引用、Root 与软引用加载实验](/journal/2026-07-19-ue-day04-object-pointers-gc#验证或作品证据) | 网站直接托管，已嵌入文章 |
 | Day 05 证据 | [Actor/Component 初始化、Tick、Spawn 与结束路径实验](/journal/2026-07-22-ue-day05-actor-component-lifecycle#验证或作品证据) | 网站直接托管，已嵌入文章 |
 | Day 06 证据 | [三类 Delegate、无 Tick Timer、只读调试命令与断言实验](/journal/2026-07-23-ue-day06-delegate-timer-logging-assertions#验证或作品证据) | 网站直接托管，已嵌入文章 |
+| Week 1 里程碑 | [UE C++ 对象运行模型实验室整合、全新克隆恢复与原始第三人称回归](/journal/2026-07-25-ue-day07-week1-object-runtime-lab#验证或作品证据) | 网站直接托管，已嵌入文章 |
 | 周里程碑 | 每周完整玩法与回归证据 | 待课程推进 |
 | 最终演示 | Project Aegis 6～10 分钟主演示 | 待作品集阶段 |
 
