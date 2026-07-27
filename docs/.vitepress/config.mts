@@ -108,6 +108,7 @@ export default withMermaid({
             { text: 'Day 05 · Actor 与 Component 生命周期', link: '/journal/2026-07-22-ue-day05-actor-component-lifecycle' },
             { text: 'Day 06 · Delegate、Timer、日志与断言', link: '/journal/2026-07-23-ue-day06-delegate-timer-logging-assertions' },
             { text: 'Day 07 · Week 1 对象运行模型实验室整合与验证', link: '/journal/2026-07-25-ue-day07-week1-object-runtime-lab' },
+            { text: 'Day 08 · World、Level 与 PIE 多 World 启动链', link: '/journal/2026-07-26-ue-day08-world-level-pie' },
             { text: '博客写作流程', link: '/journal/writing' }
           ]
         }
