@@ -11,6 +11,7 @@ description: UE 5.8 C++ 客户端工程学习、Project Aegis 与面试展示入
 
 ## 最新学习日志
 
+- [Day 09：GameInstance 与 Subsystem 生命周期](/journal/2026-07-28-ue-day09-gameinstance-subsystem)
 - [Day 08：World、Level 与 PIE 多 World 启动链](/journal/2026-07-26-ue-day08-world-level-pie)
 - [Day 07：Week 1 对象运行模型实验室整合与验证](/journal/2026-07-25-ue-day07-week1-object-runtime-lab)
 - [Day 06：Delegate、Timer、日志与断言](/journal/2026-07-23-ue-day06-delegate-timer-logging-assertions)

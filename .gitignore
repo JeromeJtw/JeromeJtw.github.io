@@ -37,3 +37,6 @@ Thumbs.db
 
 # Allow the reviewed Day 08 World/PIE lifecycle demo to be published by GitHub Pages.
 !docs/public/media/ue/day08/day08-world-level-pie.mp4
+
+# Allow the reviewed Day 09 GameInstance/Subsystem demo to be published by GitHub Pages.
+!docs/public/media/ue/day09/day09-gameinstance-subsystem.mp4
