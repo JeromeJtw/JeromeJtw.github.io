@@ -40,3 +40,6 @@ Thumbs.db
 
 # Allow the reviewed Day 09 GameInstance/Subsystem demo to be published by GitHub Pages.
 !docs/public/media/ue/day09/day09-gameinstance-subsystem.mp4
+
+# Allow the reviewed Day 10 GameMode/GameState demo to be published by GitHub Pages.
+!docs/public/media/ue/day10/day10-gamemode-gamestate.mp4

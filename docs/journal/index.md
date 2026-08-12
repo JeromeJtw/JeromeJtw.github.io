@@ -11,6 +11,7 @@ description: 由学习者亲自撰写的跨领域学习时间线。
 
 | 日期 | 领域 | 主题 | 状态 |
 |---|---|---|---|
+| 2026-08-12 | UE | [Day 10：GameMode 与 GameState 的权威边界](/journal/2026-08-12-ue-day10-gamemode-gamestate) | 已发布 |
 | 2026-07-28 | UE | [Day 09：GameInstance 与 Subsystem 生命周期](/journal/2026-07-28-ue-day09-gameinstance-subsystem) | 已发布 |
 | 2026-07-26 | UE | [Day 08：World、Level 与 PIE 多 World 启动链](/journal/2026-07-26-ue-day08-world-level-pie) | 已发布 |
 | 2026-07-25 | UE | [Day 07：Week 1 对象运行模型实验室整合与验证](/journal/2026-07-25-ue-day07-week1-object-runtime-lab) | 已发布 |
