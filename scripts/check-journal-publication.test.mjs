@@ -87,3 +87,33 @@ test('缺少学习日志 Sidebar 入口时返回失败', async () => {
     await rm(root, { recursive: true, force: true })
   }
 })
+
+test('媒体文件仍是 Git LFS Pointer 时返回失败', async () => {
+  const root = await createFixture({ includeSidebarRoute: true })
+  const route = '/journal/2026-07-19-test-entry'
+  const videoPath = '/media/ue/day99/test.mp4'
+  const pointer =
+    'version https://git-lfs.github.com/spec/v1\n' +
+    `oid sha256:${'0'.repeat(64)}\n` +
+    'size 123456\n'
+
+  try {
+    await Promise.all([
+      writeFixtureFile(
+        root,
+        'docs/journal/2026-07-19-test-entry.md',
+        `---\ntitle: "Test entry"\ndate: 2026-07-19\ndomain: ue\ntype: journal\nseries: test-series\nstatus: published\n---\n\n# Test entry\n\n<video controls><source src="${videoPath}" type="video/mp4" /></video>\n`
+      ),
+      writeFixtureFile(root, 'docs/ue/videos/index.md', `# Videos\n\n[Entry](${route})\n`),
+      writeFixtureFile(root, `docs/public${videoPath}`, pointer),
+      writeFixtureFile(root, '.gitignore', `*.mp4\n!docs/public${videoPath}\n`)
+    ])
+
+    const result = await validateJournalPublication(root)
+    assert.equal(result.errors.length, 1)
+    assert.match(result.errors[0], /Git LFS Pointer/)
+    assert.equal(result.stats.mediaChecks, 1)
+  } finally {
+    await rm(root, { recursive: true, force: true })
+  }
+})

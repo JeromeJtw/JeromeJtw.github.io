@@ -1,7 +1,9 @@
-import { access, readFile, readdir } from 'node:fs/promises'
+import { access, readFile, readdir, stat } from 'node:fs/promises'
 import path from 'node:path'
 import { pathToFileURL } from 'node:url'
 
+const GIT_LFS_POINTER_PREFIX = 'version https://git-lfs.github.com/spec/v1'
+const GIT_LFS_POINTER_MAX_BYTES = 1024
 const JOURNAL_FILE_PATTERN = /^\d{4}-\d{2}-\d{2}-.+\.md$/
 const ROADMAP_SERIES = 'ue-client-roadmap'
 
@@ -84,6 +86,16 @@ async function fileExists(filePath) {
   } catch {
     return false
   }
+}
+
+async function isGitLfsPointer(filePath) {
+  const fileStats = await stat(filePath)
+  if (fileStats.size > GIT_LFS_POINTER_MAX_BYTES) {
+    return false
+  }
+
+  const source = await readFile(filePath, 'utf8')
+  return source.startsWith(GIT_LFS_POINTER_PREFIX)
 }
 
 async function readRequiredFile(filePath, label, errors) {
@@ -196,6 +208,8 @@ export async function validateJournalPublication(repoRoot) {
       const videoFile = resolvePublicFile(resolvedRoot, videoPath)
       if (!(await fileExists(videoFile))) {
         errors.push(`${articleName} 引用的视频文件不存在：${videoPath}`)
+      } else if (await isGitLfsPointer(videoFile)) {
+        errors.push(`${articleName} 引用的视频仍是 Git LFS Pointer，构建环境未下载实际对象：${videoPath}`)
       }
 
       const exception = `!docs/public${videoPath}`
@@ -209,6 +223,8 @@ export async function validateJournalPublication(repoRoot) {
       const imageFile = resolvePublicFile(resolvedRoot, imagePath)
       if (!(await fileExists(imageFile))) {
         errors.push(`${articleName} 引用的图片文件不存在：${imagePath}`)
+      } else if (await isGitLfsPointer(imageFile)) {
+        errors.push(`${articleName} 引用的图片仍是 Git LFS Pointer，构建环境未下载实际对象：${imagePath}`)
       }
     }
 

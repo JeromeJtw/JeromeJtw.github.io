@@ -60,8 +60,8 @@ outline: deep
    - 文章包含视频时，更新所属领域的视频索引；
    - 文章属于课程路线时，更新路线的“当前 Day / 下一步 Day”状态；
    - 形成新的面试展示里程碑时，按需更新 Showcase，不为每篇文章机械修改。
-5. 核对文章引用的图片和视频文件实际存在；直接托管的 MP4 必须保留全局忽略规则，并在 `.gitignore` 中增加该文件的精确例外。
-6. 本地执行 `pnpm.cmd check`。该命令先运行发布完整性回归测试和日志入口校验，再执行 VitePress 生产构建；任一步失败都不得提交或推送。
+5. 核对文章引用的图片和视频文件实际存在；直接托管的 MP4 统一放在 `docs/public/media/` 并由 Git LFS 管理，同时保留全局忽略规则，在 `.gitignore` 中增加该文件的精确例外。暂存后使用 `git lfs ls-files` 确认新视频已进入 LFS，不能使用 `git add -f` 绕过发布规则。
+6. 本地执行 `pnpm.cmd check`。该命令先运行发布完整性回归测试和日志入口校验，再执行 VitePress 生产构建；校验会拒绝未下载实际对象的 Git LFS Pointer，任一步失败都不得提交或推送。
 7. 完成敏感信息、隐私、资产许可、Git 变更范围、缓存区文件清单和 `git diff --cached --check` 审查。
 8. 推送后核对本地 HEAD、`origin/main` 和远端 `main`，等待 GitHub Actions 的 build 与 deploy 均成功。
 9. 从真实用户发现路径完成线上验收：先打开 `/journal/`，确认正文列表和 Sidebar 都能发现新文章，再进入直达页检查标题、目录、代码、表格、图片和媒体。
@@ -84,6 +84,7 @@ outline: deep
 ## 发布失败处理
 
 - 自动校验发现入口、媒体或路线状态遗漏时，先补齐同一发布批次，再重新执行 `pnpm.cmd check`；不能绕过校验直接发布。
+- 校验提示媒体仍是 Git LFS Pointer 时，先确认本机已安装 Git LFS 并执行 `git lfs pull`；GitHub Actions 必须通过 Checkout 的 `lfs: true` 下载实际对象，不能让 Pointer 进入 Pages 构建产物。
 - GitHub 直连发生连接重置或 `443` 超时时，保留已审查的本地 Commit，优先使用已验证的一次性代理参数重试，不默认修改全局 Git 代理配置。
 - GitHub Actions 或线上验收未完成时，只能记录为“已推送”或“待部署/待验收”，不能提前写成“发布完成”。
 
