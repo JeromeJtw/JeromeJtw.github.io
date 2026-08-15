@@ -110,8 +110,109 @@
   height: auto;
 }
 
+.vp-doc img[data-aegis-lightbox-ready='true'] {
+  cursor: zoom-in;
+}
+
+.vp-doc img[data-aegis-lightbox-ready='true']:focus-visible {
+  border-radius: 4px;
+  outline: 3px solid var(--vp-c-brand-1);
+  outline-offset: 4px;
+}
+
+html.aegis-image-lightbox-open,
+html.aegis-image-lightbox-open body {
+  overflow: hidden;
+}
+
+.aegis-image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(8, 13, 23, 0.94);
+}
+
+.aegis-image-lightbox__image {
+  display: block;
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 48px);
+  max-height: calc(100dvh - 48px);
+  border-radius: 4px;
+  background: #080d17;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+  object-fit: contain;
+}
+
+.aegis-image-lightbox__close {
+  position: fixed;
+  top: max(16px, env(safe-area-inset-top));
+  right: max(16px, env(safe-area-inset-right));
+  z-index: 1;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 6px;
+  color: #ffffff;
+  background: rgba(8, 13, 23, 0.72);
+  cursor: pointer;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.aegis-image-lightbox__close:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.aegis-image-lightbox__close:focus-visible {
+  outline: 3px solid #2dd4bf;
+  outline-offset: 3px;
+}
+
+.aegis-image-lightbox-enter-active,
+.aegis-image-lightbox-leave-active {
+  transition: opacity 0.16s ease;
+}
+
+.aegis-image-lightbox-enter-from,
+.aegis-image-lightbox-leave-to {
+  opacity: 0;
+}
+
 @media (max-width: 900px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .aegis-image-lightbox {
+    padding: 12px;
+  }
+
+  .aegis-image-lightbox__image {
+    max-width: calc(100vw - 24px);
+    max-height: calc(100vh - 24px);
+    max-height: calc(100dvh - 24px);
+  }
+
+  .aegis-image-lightbox__close {
+    top: max(10px, env(safe-area-inset-top));
+    right: max(10px, env(safe-area-inset-right));
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aegis-image-lightbox-enter-active,
+  .aegis-image-lightbox-leave-active {
+    transition: none;
   }
 }
