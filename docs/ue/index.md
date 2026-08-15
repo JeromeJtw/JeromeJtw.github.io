@@ -11,6 +11,7 @@ description: UE 5.8 C++ 客户端工程学习、Project Aegis 与面试展示入
 
 ## 最新学习日志
 
+- [Day 11：PlayerController 与 PlayerState 的玩家边界](/journal/2026-08-14-ue-day11-playercontroller-playerstate)
 - [Day 10：GameMode 与 GameState 的权威边界](/journal/2026-08-12-ue-day10-gamemode-gamestate)
 - [Day 09：GameInstance 与 Subsystem 生命周期](/journal/2026-07-28-ue-day09-gameinstance-subsystem)
 - [Day 08：World、Level 与 PIE 多 World 启动链](/journal/2026-07-26-ue-day08-world-level-pie)

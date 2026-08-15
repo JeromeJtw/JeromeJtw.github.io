@@ -111,6 +111,7 @@ export default withMermaid({
             { text: 'Day 08 · World、Level 与 PIE 多 World 启动链', link: '/journal/2026-07-26-ue-day08-world-level-pie' },
             { text: 'Day 09 · GameInstance 与 Subsystem 生命周期', link: '/journal/2026-07-28-ue-day09-gameinstance-subsystem' },
             { text: 'Day 10 · GameMode 与 GameState 的权威边界', link: '/journal/2026-08-12-ue-day10-gamemode-gamestate' },
+            { text: 'Day 11 · PlayerController 与 PlayerState 的玩家边界', link: '/journal/2026-08-14-ue-day11-playercontroller-playerstate' },
             { text: '博客写作流程', link: '/journal/writing' }
           ]
         }

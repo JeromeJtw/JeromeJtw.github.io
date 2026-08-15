@@ -21,6 +21,7 @@ description: Project Aegis 的短证据、周里程碑和最终演示。
 | Day 08 证据 | [World、Level 与 PIE 多 World 启动链](/journal/2026-07-26-ue-day08-world-level-pie#验证或作品证据) | 网站直接托管，已嵌入文章 |
 | Day 09 证据 | [GameInstance、跨地图 Subsystem 与多 LocalPlayer 实例隔离](/journal/2026-07-28-ue-day09-gameinstance-subsystem#验证或作品证据) | 网站直接托管，已嵌入文章 |
 | Day 10 证据 | [GameMode 与 GameState 的权威边界](/journal/2026-08-12-ue-day10-gamemode-gamestate#验证或作品证据) | 网站直接托管，已嵌入文章 |
+| Day 11 证据 | [PlayerController 与 PlayerState 的玩家边界](/journal/2026-08-14-ue-day11-playercontroller-playerstate#验证或作品证据) | 网站直接托管，已嵌入文章 |
 | 周里程碑 | 每周完整玩法与回归证据 | 待课程推进 |
 | 最终演示 | Project Aegis 6～10 分钟主演示 | 待作品集阶段 |
 
