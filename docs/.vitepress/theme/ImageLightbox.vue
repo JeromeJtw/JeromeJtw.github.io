@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue'
+import { computed, nextTick, onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
 import { useRoute } from 'vitepress'
 
 interface PreviewImage {
@@ -15,11 +15,22 @@ interface OriginalAttributes {
 
 const route = useRoute()
 const activeImage = ref<PreviewImage | null>(null)
+const activeImageIndex = ref(-1)
+const navigationImages = shallowRef<HTMLImageElement[]>([])
+const dialog = ref<HTMLDivElement | null>(null)
 const closeButton = ref<HTMLButtonElement | null>(null)
 const decoratedImages = new Map<HTMLImageElement, OriginalAttributes>()
 let lastFocusedElement: HTMLElement | null = null
 
 const isOpen = computed(() => activeImage.value !== null)
+const hasNavigation = computed(() =>
+  navigationImages.value.length > 1 && activeImageIndex.value >= 0
+)
+const navigationPosition = computed(() =>
+  hasNavigation.value
+    ? `${activeImageIndex.value + 1} / ${navigationImages.value.length}`
+    : ''
+)
 const dialogLabel = computed(() =>
   activeImage.value?.alt
     ? `图片预览：${activeImage.value.alt}`
@@ -78,13 +89,33 @@ async function openImage(image: HTMLImageElement): Promise<void> {
   lastFocusedElement = document.activeElement instanceof HTMLElement
     ? document.activeElement
     : null
+  const workGrid = image.closest('.photography-work-grid')
+  navigationImages.value = workGrid
+    ? Array.from(workGrid.querySelectorAll<HTMLImageElement>('.photography-work > img'))
+      .filter(isPreviewableImage)
+    : []
+  activeImageIndex.value = navigationImages.value.indexOf(image)
+  setActiveImage(image)
+  document.documentElement.classList.add('aegis-image-lightbox-open')
+  await nextTick()
+  closeButton.value?.focus()
+}
+
+function setActiveImage(image: HTMLImageElement): void {
   activeImage.value = {
     alt: image.alt,
     src: image.currentSrc || image.src
   }
-  document.documentElement.classList.add('aegis-image-lightbox-open')
-  await nextTick()
-  closeButton.value?.focus()
+}
+
+function showAdjacentImage(offset: number): void {
+  const imageCount = navigationImages.value.length
+  if (imageCount < 2 || activeImageIndex.value < 0) {
+    return
+  }
+
+  activeImageIndex.value = (activeImageIndex.value + offset + imageCount) % imageCount
+  setActiveImage(navigationImages.value[activeImageIndex.value])
 }
 
 function closeImage(restoreFocus = true): void {
@@ -93,11 +124,31 @@ function closeImage(restoreFocus = true): void {
   }
 
   activeImage.value = null
+  activeImageIndex.value = -1
+  navigationImages.value = []
   document.documentElement.classList.remove('aegis-image-lightbox-open')
 
   if (restoreFocus && lastFocusedElement?.isConnected) {
     nextTick(() => lastFocusedElement?.focus())
   }
+}
+
+function trapDialogFocus(event: KeyboardEvent): void {
+  const controls = Array.from(
+    dialog.value?.querySelectorAll<HTMLButtonElement>('button:not([disabled])') ?? []
+  )
+  if (!controls.length) {
+    return
+  }
+
+  const focusedIndex = controls.indexOf(document.activeElement as HTMLButtonElement)
+  let nextIndex = event.shiftKey ? controls.length - 1 : 0
+  if (focusedIndex >= 0) {
+    nextIndex = event.shiftKey
+      ? (focusedIndex - 1 + controls.length) % controls.length
+      : (focusedIndex + 1) % controls.length
+  }
+  controls[nextIndex]?.focus()
 }
 
 function handleDocumentClick(event: MouseEvent): void {
@@ -119,9 +170,15 @@ function handleDocumentKeydown(event: KeyboardEvent): void {
     if (event.key === 'Escape') {
       event.preventDefault()
       closeImage()
+    } else if (event.key === 'ArrowLeft' && hasNavigation.value) {
+      event.preventDefault()
+      showAdjacentImage(-1)
+    } else if (event.key === 'ArrowRight' && hasNavigation.value) {
+      event.preventDefault()
+      showAdjacentImage(1)
     } else if (event.key === 'Tab') {
       event.preventDefault()
-      closeButton.value?.focus()
+      trapDialogFocus(event)
     }
     return
   }
@@ -165,7 +222,9 @@ onBeforeUnmount(() => {
     <Transition name="aegis-image-lightbox">
       <div
         v-if="activeImage"
+        ref="dialog"
         class="aegis-image-lightbox"
+        :class="{ 'aegis-image-lightbox--navigable': hasNavigation }"
         role="dialog"
         aria-modal="true"
         :aria-label="dialogLabel"
@@ -181,12 +240,39 @@ onBeforeUnmount(() => {
         >
           <span aria-hidden="true">&times;</span>
         </button>
+        <button
+          v-if="hasNavigation"
+          class="aegis-image-lightbox__navigation aegis-image-lightbox__navigation--previous"
+          type="button"
+          aria-label="上一幅作品"
+          title="上一幅作品"
+          @click="showAdjacentImage(-1)"
+        >
+          <span aria-hidden="true">&larr;</span>
+        </button>
         <img
           class="aegis-image-lightbox__image"
           :src="activeImage.src"
           :alt="activeImage.alt"
           @click.stop
         >
+        <span
+          v-if="hasNavigation"
+          class="aegis-image-lightbox__position"
+          aria-live="polite"
+        >
+          {{ navigationPosition }}
+        </span>
+        <button
+          v-if="hasNavigation"
+          class="aegis-image-lightbox__navigation aegis-image-lightbox__navigation--next"
+          type="button"
+          aria-label="下一幅作品"
+          title="下一幅作品"
+          @click="showAdjacentImage(1)"
+        >
+          <span aria-hidden="true">&rarr;</span>
+        </button>
       </div>
     </Transition>
   </Teleport>

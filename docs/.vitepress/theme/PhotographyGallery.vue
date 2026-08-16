@@ -210,44 +210,6 @@ onBeforeUnmount(() => {
   </article>
 
   <div v-else class="photography-gallery photography-gallery-home">
-    <section aria-labelledby="photography-collections-title">
-      <div class="photography-section-heading">
-        <div>
-          <p class="photography-eyebrow">按主题浏览</p>
-          <h2 id="photography-collections-title">作品集</h2>
-        </div>
-        <span>{{ photographyCollections.length }} 组</span>
-      </div>
-
-      <div class="photography-collection-grid">
-        <a
-          v-for="item in photographyCollections"
-          :key="item.name"
-          class="photography-collection-card"
-          :href="collectionLink(item.name)"
-        >
-          <div class="photography-collection-card__media">
-            <img
-              v-if="collectionCover(item)"
-              :src="imageSource(collectionCover(item)!.src)"
-              :alt="collectionCover(item)!.alt"
-              loading="lazy"
-              decoding="async"
-            >
-            <div v-else class="photography-collection-card__placeholder" aria-hidden="true">
-              <span>{{ item.name.slice(0, 1) }}</span>
-            </div>
-          </div>
-          <div class="photography-collection-card__body">
-            <div>
-              <h3>{{ item.name }}</h3>
-              <span>{{ item.works.length }} 幅</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </section>
-
     <section class="photography-carousel-section" aria-labelledby="photography-all-title">
       <div class="photography-section-heading">
         <div>
@@ -299,6 +261,44 @@ onBeforeUnmount(() => {
       <div v-else class="photography-empty-state" role="status">
         <strong>作品整理中</strong>
         <span>作品公开后将在这里汇总展示。</span>
+      </div>
+    </section>
+
+    <section aria-labelledby="photography-collections-title">
+      <div class="photography-section-heading">
+        <div>
+          <p class="photography-eyebrow">按主题浏览</p>
+          <h2 id="photography-collections-title">作品集</h2>
+        </div>
+        <span>{{ photographyCollections.length }} 组</span>
+      </div>
+
+      <div class="photography-collection-grid">
+        <a
+          v-for="item in photographyCollections"
+          :key="item.name"
+          class="photography-collection-card"
+          :href="collectionLink(item.name)"
+        >
+          <div class="photography-collection-card__media">
+            <img
+              v-if="collectionCover(item)"
+              :src="imageSource(collectionCover(item)!.src)"
+              :alt="collectionCover(item)!.alt"
+              loading="lazy"
+              decoding="async"
+            >
+            <div v-else class="photography-collection-card__placeholder" aria-hidden="true">
+              <span>{{ item.name.slice(0, 1) }}</span>
+            </div>
+          </div>
+          <div class="photography-collection-card__body">
+            <div>
+              <h3>{{ item.name }}</h3>
+              <span>{{ item.works.length }} 幅</span>
+            </div>
+          </div>
+        </a>
       </div>
     </section>
   </div>
