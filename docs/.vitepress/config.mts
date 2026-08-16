@@ -6,7 +6,7 @@ export default withMermaid({
   lang: 'zh-CN',
   base: '/',
   cleanUrls: true,
-  lastUpdated: true,
+  lastUpdated: false,
   srcExclude: ['drafts/**/*.md'],
   sitemap: {
     hostname: 'https://jeromejtw.github.io/'
@@ -157,10 +157,6 @@ export default withMermaid({
         }
       }
     },
-    editLink: {
-      pattern: 'https://github.com/JeromeJtw/JeromeJtw.github.io/edit/main/docs/:path',
-      text: '在 GitHub 上编辑此页'
-    },
     outline: {
       label: '本页内容',
       level: [2, 3]
@@ -168,9 +164,6 @@ export default withMermaid({
     docFooter: {
       prev: '上一篇',
       next: '下一篇'
-    },
-    lastUpdated: {
-      text: '最后更新'
     },
     returnToTopLabel: '返回顶部',
     sidebarMenuLabel: '目录',

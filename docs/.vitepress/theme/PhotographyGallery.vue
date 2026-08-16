@@ -83,6 +83,22 @@ function showNext(): void {
   activeIndex.value = (activeIndex.value + 1) % workCount
 }
 
+function releasePointerFocus(event: MouseEvent): void {
+  if (event.detail > 0 && event.currentTarget instanceof HTMLElement) {
+    event.currentTarget.blur()
+  }
+}
+
+function handlePreviousClick(event: MouseEvent): void {
+  showPrevious()
+  releasePointerFocus(event)
+}
+
+function handleNextClick(event: MouseEvent): void {
+  showNext()
+  releasePointerFocus(event)
+}
+
 function stopAutoplay(): void {
   if (autoplayTimer !== undefined) {
     window.clearInterval(autoplayTimer)
@@ -248,11 +264,11 @@ onBeforeUnmount(() => {
         </a>
 
         <div v-if="allWorks.length > 1" class="photography-carousel__controls">
-          <button type="button" aria-label="上一幅作品" title="上一幅" @click="showPrevious">
+          <button type="button" aria-label="上一幅作品" title="上一幅" @click="handlePreviousClick">
             <span aria-hidden="true">&larr;</span>
           </button>
           <span aria-live="polite">{{ activeIndex + 1 }} / {{ allWorks.length }}</span>
-          <button type="button" aria-label="下一幅作品" title="下一幅" @click="showNext">
+          <button type="button" aria-label="下一幅作品" title="下一幅" @click="handleNextClick">
             <span aria-hidden="true">&rarr;</span>
           </button>
         </div>

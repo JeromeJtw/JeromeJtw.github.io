@@ -123,13 +123,24 @@ function closeImage(restoreFocus = true): void {
     return
   }
 
+  const currentImage = activeImageIndex.value >= 0
+    ? navigationImages.value[activeImageIndex.value]
+    : null
+  const focusTarget = currentImage?.isConnected
+    ? currentImage
+    : lastFocusedElement
+
   activeImage.value = null
   activeImageIndex.value = -1
   navigationImages.value = []
+  lastFocusedElement = null
   document.documentElement.classList.remove('aegis-image-lightbox-open')
 
-  if (restoreFocus && lastFocusedElement?.isConnected) {
-    nextTick(() => lastFocusedElement?.focus())
+  if (restoreFocus && focusTarget?.isConnected) {
+    nextTick(() => {
+      focusTarget.focus({ preventScroll: true })
+      focusTarget.scrollIntoView({ block: 'center', inline: 'nearest' })
+    })
   }
 }
 

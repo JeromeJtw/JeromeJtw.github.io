@@ -183,10 +183,13 @@
 
 .photography-collection-card__media img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
   margin: 0;
   object-fit: contain;
+  object-position: center;
 }
 
 .photography-collection-card__placeholder {
@@ -237,6 +240,7 @@
 
 .photography-carousel {
   position: relative;
+  display: grid;
   overflow: hidden;
   border: 1px solid var(--photography-border);
   border-radius: 6px;
@@ -251,9 +255,10 @@
 .vp-doc a.photography-carousel__slide {
   position: relative;
   display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
   width: 100%;
   height: clamp(360px, 61vw, 640px);
-  place-items: center;
+  padding-top: 18px;
   color: #ffffff;
   text-decoration: none;
 }
@@ -264,23 +269,24 @@
 
 .photography-carousel__slide img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+  min-height: 0;
   margin: 0;
   object-fit: contain;
+  object-position: center;
+  place-self: center;
 }
 
 .photography-carousel__caption {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   gap: 18px;
-  padding: 48px 18px 16px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.78), transparent);
+  padding: 14px 18px 16px;
+  background: rgba(8, 13, 23, 0.96);
 }
 
 .photography-carousel__caption span {
@@ -295,12 +301,11 @@
 }
 
 .photography-carousel__controls {
-  position: absolute;
-  top: 14px;
-  right: 14px;
   display: flex;
   align-items: center;
+  justify-self: end;
   gap: 10px;
+  margin: 10px 12px 12px;
   padding: 5px;
   border: 1px solid rgba(255, 255, 255, 0.34);
   border-radius: 6px;
@@ -390,12 +395,15 @@
 }
 
 .photography-work {
+  display: grid;
+  justify-items: center;
   margin: 0;
 }
 
 .photography-work img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
   max-height: 80vh;
   max-height: 80dvh;
@@ -403,10 +411,12 @@
   border-radius: 3px;
   background: #080d17;
   object-fit: contain;
+  object-position: center;
 }
 
 .photography-work figcaption {
   display: grid;
+  width: 100%;
   grid-template-columns: minmax(0, auto) minmax(0, 1fr);
   gap: 16px;
   margin-top: 10px;
@@ -445,6 +455,7 @@
   .vp-doc a.photography-carousel__slide {
     height: min(72vh, 520px);
     height: min(72dvh, 520px);
+    padding-top: 12px;
   }
 
   .photography-carousel__caption {
@@ -459,8 +470,7 @@
   }
 
   .photography-carousel__controls {
-    top: 10px;
-    right: 10px;
+    margin: 8px 10px 10px;
   }
 
   .photography-carousel__controls button {
