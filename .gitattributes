@@ -8,6 +8,12 @@
 *.woff2 binary
 *.mp4 binary
 docs/public/media/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+docs/public/photography/**/*.avif filter=lfs diff=lfs merge=lfs -text
+docs/public/photography/**/*.gif filter=lfs diff=lfs merge=lfs -text
+docs/public/photography/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
+docs/public/photography/**/*.jpg filter=lfs diff=lfs merge=lfs -text
+docs/public/photography/**/*.png filter=lfs diff=lfs merge=lfs -text
+docs/public/photography/**/*.webp filter=lfs diff=lfs merge=lfs -text
 *.mov binary
 *.mkv binary
 *.avi binary

@@ -95,6 +95,385 @@
   content: '';
 }
 
+.photography-gallery {
+  --photography-border: color-mix(in srgb, var(--vp-c-divider) 82%, transparent);
+  --photography-surface: color-mix(in srgb, var(--vp-c-bg-soft) 82%, transparent);
+  margin-top: 36px;
+}
+
+.photography-gallery section + section {
+  margin-top: 64px;
+}
+
+.photography-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--photography-border);
+}
+
+.photography-section-heading h2,
+.photography-collection__header h1 {
+  margin: 0;
+  border: 0;
+  letter-spacing: 0;
+}
+
+.photography-section-heading > span,
+.photography-count {
+  flex: none;
+  color: var(--vp-c-text-3);
+  font-size: 13px;
+}
+
+.photography-eyebrow {
+  margin: 0 0 4px;
+  color: var(--vp-c-brand-1);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.photography-collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.vp-doc a.photography-collection-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--photography-border);
+  border-radius: 6px;
+  color: inherit;
+  background: var(--vp-c-bg);
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.vp-doc a.photography-collection-card:hover {
+  border-color: var(--vp-c-brand-1);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.vp-doc a.photography-collection-card:focus-visible,
+.vp-doc a.photography-carousel__slide:focus-visible,
+.vp-doc a.photography-back-link:focus-visible {
+  border-radius: 4px;
+  outline: 3px solid var(--vp-c-brand-1);
+  outline-offset: 3px;
+}
+
+.photography-collection-card__media {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  place-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--photography-border);
+  background: var(--photography-surface);
+}
+
+.photography-collection-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: contain;
+}
+
+.photography-collection-card__placeholder {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: var(--vp-c-text-3);
+  background:
+    linear-gradient(135deg, transparent 49.5%, var(--photography-border) 50%, transparent 50.5%),
+    var(--photography-surface);
+}
+
+.photography-collection-card__placeholder span {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 50%;
+  background: var(--vp-c-bg);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.photography-collection-card__body {
+  padding: 16px;
+}
+
+.photography-collection-card__body > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.photography-collection-card__body h3 {
+  margin: 0;
+  color: var(--vp-c-text-1);
+  font-size: 17px;
+}
+
+.photography-collection-card__body span {
+  flex: none;
+  color: var(--vp-c-text-3);
+  font-size: 12px;
+}
+
+.photography-carousel {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--photography-border);
+  border-radius: 6px;
+  background: #080d17;
+}
+
+.photography-carousel:focus-visible {
+  outline: 3px solid var(--vp-c-brand-1);
+  outline-offset: 3px;
+}
+
+.vp-doc a.photography-carousel__slide {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: clamp(360px, 61vw, 640px);
+  place-items: center;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.vp-doc a.photography-carousel__slide:hover {
+  text-decoration: none;
+}
+
+.photography-carousel__slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: contain;
+}
+
+.photography-carousel__caption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 48px 18px 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.78), transparent);
+}
+
+.photography-carousel__caption span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+}
+
+.photography-carousel__caption strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+
+.photography-carousel__controls {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 6px;
+  color: #ffffff;
+  background: rgba(8, 13, 23, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.photography-carousel__controls button {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  color: inherit;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.photography-carousel__controls button:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.photography-carousel__controls button:focus-visible {
+  outline: 2px solid #5eead4;
+  outline-offset: 1px;
+}
+
+.photography-carousel__controls > span {
+  min-width: 46px;
+  text-align: center;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.photography-empty-state {
+  display: grid;
+  min-height: 180px;
+  place-content: center;
+  gap: 6px;
+  padding: 28px;
+  border: 1px dashed var(--vp-c-divider);
+  border-radius: 6px;
+  color: var(--vp-c-text-2);
+  background: var(--photography-surface);
+  text-align: center;
+}
+
+.photography-empty-state strong {
+  color: var(--vp-c-text-1);
+  font-size: 16px;
+}
+
+.vp-doc a.photography-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  color: var(--vp-c-text-2);
+  text-decoration: none;
+}
+
+.vp-doc a.photography-back-link:hover {
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+}
+
+.photography-collection__header {
+  max-width: 720px;
+  margin-bottom: 36px;
+}
+
+.photography-collection__header > p:not(.photography-eyebrow) {
+  margin: 12px 0;
+  color: var(--vp-c-text-2);
+  font-size: 16px;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.photography-work-grid {
+  display: grid;
+  gap: 40px;
+}
+
+.photography-work {
+  margin: 0;
+}
+
+.photography-work img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  max-height: 80dvh;
+  margin: 0;
+  border-radius: 3px;
+  background: #080d17;
+  object-fit: contain;
+}
+
+.photography-work figcaption {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(0, 1fr);
+  gap: 16px;
+  margin-top: 10px;
+  color: var(--vp-c-text-2);
+  font-size: 13px;
+}
+
+.photography-work figcaption strong {
+  color: var(--vp-c-text-1);
+}
+
+.photography-work figcaption span {
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+@media (max-width: 900px) {
+  .photography-collection-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .photography-gallery {
+    margin-top: 28px;
+  }
+
+  .photography-gallery section + section {
+    margin-top: 48px;
+  }
+
+  .photography-collection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vp-doc a.photography-carousel__slide {
+    height: min(72vh, 520px);
+    height: min(72dvh, 520px);
+  }
+
+  .photography-carousel__caption {
+    display: grid;
+    gap: 2px;
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .photography-carousel__caption strong {
+    text-align: left;
+  }
+
+  .photography-carousel__controls {
+    top: 10px;
+    right: 10px;
+  }
+
+  .photography-carousel__controls button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .photography-work figcaption {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+}
+
 .mermaid {
   overflow-x: auto;
   margin: 24px 0;
@@ -211,6 +590,10 @@ html.aegis-image-lightbox-open body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .vp-doc a.photography-collection-card {
+    transition: none;
+  }
+
   .aegis-image-lightbox-enter-active,
   .aegis-image-lightbox-leave-active {
     transition: none;

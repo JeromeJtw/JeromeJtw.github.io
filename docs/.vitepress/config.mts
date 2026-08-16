@@ -19,6 +19,11 @@ export default withMermaid({
   markdown: {
     lineNumbers: true
   },
+  vite: {
+    optimizeDeps: {
+      include: ['mermaid']
+    }
+  },
   mermaid: {
     securityLevel: 'strict',
     fontFamily: 'Inter, "Microsoft YaHei", sans-serif'
