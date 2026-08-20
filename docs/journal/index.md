@@ -11,6 +11,7 @@ description: 由学习者亲自撰写的跨领域学习时间线。
 
 | 日期 | 领域 | 主题 | 状态 |
 |---|---|---|---|
+| 2026-08-18 | UE | [Day 12：Pawn、Character 与 Possession：从 Character 切换到 Observer Pawn](/journal/2026-08-18-ue-day12-pawn-character-possession) | 已发布 |
 | 2026-08-14 | UE | [Day 11：PlayerController 与 PlayerState 的玩家边界](/journal/2026-08-14-ue-day11-playercontroller-playerstate) | 已发布 |
 | 2026-08-12 | UE | [Day 10：GameMode 与 GameState 的权威边界](/journal/2026-08-12-ue-day10-gamemode-gamestate) | 已发布 |
 | 2026-07-28 | UE | [Day 09：GameInstance 与 Subsystem 生命周期](/journal/2026-07-28-ue-day09-gameinstance-subsystem) | 已发布 |
