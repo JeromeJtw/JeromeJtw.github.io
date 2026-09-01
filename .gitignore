@@ -50,3 +50,6 @@ Thumbs.db
 
 # Allow the reviewed Day 12 Pawn/Character/Possession demo to be published by GitHub Pages.
 !docs/public/media/ue/day12/day12-pawn-character-possession.mp4
+
+# Allow the reviewed Day 13 Spawn/respawn/initialization demo to be published by GitHub Pages.
+!docs/public/media/ue/day13/day13-spawn-respawn-initialization.mp4
