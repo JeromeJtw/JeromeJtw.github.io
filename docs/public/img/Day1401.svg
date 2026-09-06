@@ -1,0 +1,195 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="910" viewBox="0 0 1280 910">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333333"/>
+    </marker>
+    <marker id="openArrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10" fill="none" stroke="#333333" stroke-width="1.4"/>
+    </marker>
+    <marker id="diamond" markerWidth="18" markerHeight="14" refX="2" refY="7" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M2,7 L10,1 L18,7 L10,13 z" fill="#ffffff" stroke="#333333" stroke-width="1.4"/>
+    </marker>
+    <style>
+      .title { font: 700 23px Arial, sans-serif; fill: #1f2933; }
+      .subtitle { font: 13px Arial, sans-serif; fill: #52606d; }
+      .worldTitle { font: 700 16px Arial, sans-serif; fill: #243b53; }
+      .worldMeta { font: 12px Arial, sans-serif; fill: #52606d; }
+      .stereo { font: 11px Arial, sans-serif; fill: #52606d; }
+      .objectName { font: 700 13px Arial, sans-serif; fill: #102a43; }
+      .objectType { font: 12px Arial, sans-serif; fill: #334e68; }
+      .body { font: 11px Arial, sans-serif; fill: #334e68; }
+      .relation { font: 11px Arial, sans-serif; fill: #243b53; }
+      .legend { font: 11px Arial, sans-serif; fill: #334e68; }
+    </style>
+  </defs>
+
+  <rect width="1280" height="910" fill="#ffffff"/>
+  <text x="40" y="38" class="title">Project Aegis - Gameplay Framework 运行时实例图</text>
+  <text x="40" y="61" class="subtitle">UML 对象视图 | UE 5.8 | Listen Server PIE 上下文 | 不是类继承图</text>
+
+  <!-- Cross-world local lifetime objects -->
+  <g>
+    <rect x="40" y="82" width="190" height="84" fill="#f8fafc" stroke="#52606d" stroke-width="1.4"/>
+    <line x1="40" y1="112" x2="230" y2="112" stroke="#52606d"/>
+    <text x="55" y="101" class="stereo">&lt;&lt;实例&gt;&gt;</text>
+    <text x="55" y="130" class="objectName">GameInstance_0</text>
+    <text x="55" y="149" class="objectType">UGameInstance</text>
+
+    <rect x="285" y="82" width="240" height="84" fill="#f8fafc" stroke="#52606d" stroke-width="1.4"/>
+    <line x1="285" y1="112" x2="525" y2="112" stroke="#52606d"/>
+    <text x="300" y="101" class="stereo">&lt;&lt;实例&gt;&gt;</text>
+    <text x="300" y="130" class="objectName">SessionSubsystem_0</text>
+    <text x="300" y="149" class="objectType">UAegisSessionSubsystem</text>
+
+    <rect x="560" y="82" width="190" height="84" fill="#f8fafc" stroke="#52606d" stroke-width="1.4"/>
+    <line x1="560" y1="112" x2="750" y2="112" stroke="#52606d"/>
+    <text x="575" y="101" class="stereo">&lt;&lt;实例&gt;&gt;</text>
+    <text x="575" y="130" class="objectName">LocalPlayer_0</text>
+    <text x="575" y="149" class="objectType">ULocalPlayer</text>
+
+    <rect x="810" y="82" width="280" height="84" fill="#f8fafc" stroke="#52606d" stroke-width="1.4"/>
+    <line x1="810" y1="112" x2="1090" y2="112" stroke="#52606d"/>
+    <text x="825" y="101" class="stereo">&lt;&lt;实例&gt;&gt;</text>
+    <text x="825" y="130" class="objectName">LocalSettingsSubsystem_0</text>
+    <text x="825" y="149" class="objectType">UAegisLocalSettingsSubsystem</text>
+
+    <line x1="230" y1="124" x2="285" y2="124" stroke="#333333" stroke-width="1.4" marker-start="url(#diamond)"/>
+    <text x="257" y="116" text-anchor="middle" class="relation">外部对象</text>
+    <line x1="750" y1="124" x2="810" y2="124" stroke="#333333" stroke-width="1.4" marker-start="url(#diamond)"/>
+    <text x="780" y="116" text-anchor="middle" class="relation">外部对象</text>
+  </g>
+
+  <!-- Server world -->
+  <g>
+    <rect x="40" y="198" width="570" height="620" rx="4" fill="#fffaf0" stroke="#9c7c38" stroke-width="1.6"/>
+    <text x="62" y="226" class="worldTitle">服务器 World：UEDPIE_0_Lvl_SpawnPossessTest</text>
+    <text x="62" y="247" class="worldMeta">WorldType=PIE | NetMode=ListenServer/Standalone | Authority=true</text>
+
+    <rect x="68" y="275" width="230" height="100" fill="#fffdf7" stroke="#52606d" stroke-width="1.4"/>
+    <line x1="68" y1="309" x2="298" y2="309" stroke="#52606d"/>
+    <text x="83" y="293" class="stereo">&lt;&lt;权威对象&gt;&gt;</text>
+    <text x="83" y="329" class="objectName">GameMode_0</text>
+    <text x="83" y="347" class="objectType">AProjectAegisGameMode</text>
+    <text x="83" y="365" class="body">登录 | 规则 | 重生 | 阶段</text>
+
+    <rect x="370" y="275" width="230" height="100" fill="#fffdf7" stroke="#52606d" stroke-width="1.4"/>
+    <line x1="370" y1="309" x2="600" y2="309" stroke="#52606d"/>
+    <text x="385" y="293" class="stereo">&lt;&lt;权威实例&gt;&gt;</text>
+    <text x="385" y="329" class="objectName">GameState_Server_0</text>
+    <text x="385" y="347" class="objectType">AProjectAegisGameState</text>
+    <text x="385" y="365" class="body">服务器写入 | 共享状态</text>
+
+    <rect x="68" y="420" width="230" height="112" fill="#fffdf7" stroke="#52606d" stroke-width="1.4"/>
+    <line x1="68" y1="454" x2="298" y2="454" stroke="#52606d"/>
+    <text x="83" y="438" class="stereo">&lt;&lt;实例&gt;&gt;</text>
+    <text x="83" y="474" class="objectName">PlayerController_0</text>
+    <text x="83" y="492" class="objectType">AProjectAegisPlayerController</text>
+    <text x="83" y="510" class="body">输入 | RPC | 控制 | 本地 UI</text>
+
+    <rect x="370" y="420" width="230" height="112" fill="#fffdf7" stroke="#52606d" stroke-width="1.4"/>
+    <line x1="370" y1="454" x2="600" y2="454" stroke="#52606d"/>
+    <text x="385" y="438" class="stereo">&lt;&lt;实例&gt;&gt;</text>
+    <text x="385" y="474" class="objectName">PlayerState_0</text>
+    <text x="385" y="492" class="objectType">AProjectAegisPlayerState</text>
+    <text x="385" y="510" class="body">PlayerId | TeamId | Score</text>
+
+    <rect x="68" y="577" width="230" height="92" fill="#fffdf7" stroke="#52606d" stroke-width="1.4"/>
+    <line x1="68" y1="611" x2="298" y2="611" stroke="#52606d"/>
+    <text x="83" y="595" class="stereo">&lt;&lt;临时 Pawn&gt;&gt;</text>
+    <text x="83" y="631" class="objectName">ObserverPawn_0</text>
+    <text x="83" y="649" class="objectType">BP_AegisObserverPawn</text>
+
+    <rect x="370" y="577" width="230" height="92" fill="#fffdf7" stroke="#52606d" stroke-width="1.4"/>
+    <line x1="370" y1="611" x2="600" y2="611" stroke="#52606d"/>
+    <text x="385" y="595" class="stereo">&lt;&lt;实例&gt;&gt;</text>
+    <text x="385" y="631" class="objectName">Character_0</text>
+    <text x="385" y="649" class="objectType">AProjectAegisCharacter</text>
+    <text x="385" y="667" class="body">身体 | 移动 | 碰撞</text>
+
+    <rect x="370" y="700" width="230" height="92" fill="#fffdf7" stroke="#52606d" stroke-width="1.4"/>
+    <line x1="370" y1="734" x2="600" y2="734" stroke="#52606d"/>
+    <text x="385" y="718" class="stereo">&lt;&lt;测试 Actor&gt;&gt;</text>
+    <text x="385" y="754" class="objectName">FT_SpawnPossess</text>
+    <text x="385" y="772" class="objectType">AAegisSpawnPossessFunctionalTest</text>
+  </g>
+
+  <!-- Client world -->
+  <g>
+    <rect x="670" y="198" width="570" height="620" rx="4" fill="#f4f8ff" stroke="#4c6a92" stroke-width="1.6"/>
+    <text x="692" y="226" class="worldTitle">拥有者客户端 World：UEDPIE_0_Lvl_SpawnPossessTest</text>
+    <text x="692" y="247" class="worldMeta">WorldType=PIE | NetMode=Client | Authority=false</text>
+
+    <rect x="698" y="275" width="230" height="100" fill="#fbfdff" stroke="#52606d" stroke-width="1.4"/>
+    <line x1="698" y1="309" x2="928" y2="309" stroke="#52606d"/>
+    <text x="713" y="293" class="stereo">&lt;&lt;复制副本&gt;&gt;</text>
+    <text x="713" y="329" class="objectName">GameState_Client_0</text>
+    <text x="713" y="347" class="objectType">AProjectAegisGameState</text>
+    <text x="713" y="365" class="body">比赛阶段 | 剩余秒数</text>
+
+    <rect x="1000" y="275" width="230" height="100" fill="#fbfdff" stroke="#52606d" stroke-width="1.4"/>
+    <line x1="1000" y1="309" x2="1230" y2="309" stroke="#52606d"/>
+    <text x="1015" y="293" class="stereo">&lt;&lt;拥有者客户端&gt;&gt;</text>
+    <text x="1015" y="329" class="objectName">PlayerController_0</text>
+    <text x="1015" y="347" class="objectType">AProjectAegisPlayerController</text>
+    <text x="1015" y="365" class="body">本地输入 | 视角 | 本地 UI</text>
+
+    <rect x="698" y="420" width="230" height="112" fill="#fbfdff" stroke="#52606d" stroke-width="1.4"/>
+    <line x1="698" y1="454" x2="928" y2="454" stroke="#52606d"/>
+    <text x="713" y="438" class="stereo">&lt;&lt;复制副本&gt;&gt;</text>
+    <text x="713" y="474" class="objectName">PlayerState_0</text>
+    <text x="713" y="492" class="objectType">AProjectAegisPlayerState</text>
+    <text x="713" y="510" class="body">观察 PlayerId | TeamId | Score</text>
+
+    <rect x="1000" y="420" width="230" height="112" fill="#fbfdff" stroke="#52606d" stroke-width="1.4"/>
+    <line x1="1000" y1="454" x2="1230" y2="454" stroke="#52606d"/>
+    <text x="1015" y="438" class="stereo">&lt;&lt;复制副本&gt;&gt;</text>
+    <text x="1015" y="474" class="objectName">Character_0</text>
+    <text x="1015" y="492" class="objectType">AProjectAegisCharacter</text>
+    <text x="1015" y="510" class="body">移动与相机观察</text>
+  </g>
+
+  <!-- Relations -->
+  <g fill="none" stroke="#333333" stroke-width="1.4">
+    <line x1="183" y1="166" x2="183" y2="198" marker-end="url(#openArrow)"/>
+    <line x1="425" y1="166" x2="425" y2="198" marker-end="url(#openArrow)"/>
+    <path d="M655,166 L655,258 L1115,258 L1115,275" marker-end="url(#arrow)"/>
+    <line x1="950" y1="166" x2="950" y2="198" marker-end="url(#openArrow)"/>
+
+    <line x1="298" y1="325" x2="370" y2="325" marker-end="url(#arrow)"/>
+    <line x1="183" y1="375" x2="183" y2="420" marker-end="url(#arrow)"/>
+    <line x1="298" y1="476" x2="370" y2="476" marker-end="url(#openArrow)"/>
+    <line x1="183" y1="532" x2="183" y2="577" marker-end="url(#arrow)"/>
+    <line x1="298" y1="623" x2="370" y2="746" marker-end="url(#openArrow)"/>
+
+    <line x1="928" y1="325" x2="1000" y2="325" stroke-dasharray="6 4" marker-end="url(#openArrow)"/>
+    <line x1="928" y1="476" x2="1000" y2="476" stroke-dasharray="6 4" marker-end="url(#openArrow)"/>
+    <line x1="600" y1="325" x2="698" y2="325" stroke-dasharray="6 4" marker-end="url(#openArrow)"/>
+    <line x1="600" y1="476" x2="698" y2="476" stroke-dasharray="6 4" marker-end="url(#openArrow)"/>
+    <line x1="600" y1="625" x2="1000" y2="476" stroke-dasharray="6 4" marker-end="url(#openArrow)"/>
+  </g>
+
+  <text x="334" y="319" text-anchor="middle" class="relation">写入共享状态</text>
+  <text x="190" y="399" class="relation">控制</text>
+  <text x="334" y="470" text-anchor="middle" class="relation">控制关系</text>
+  <text x="190" y="568" text-anchor="middle" class="relation">临时控制</text>
+  <text x="334" y="688" text-anchor="middle" class="relation">测试观察</text>
+  <text x="800" y="271" class="relation">本地玩家控制通道</text>
+  <text x="964" y="319" text-anchor="middle" class="relation">本地控制通道</text>
+  <text x="964" y="470" text-anchor="middle" class="relation">拥有者客户端</text>
+  <text x="640" y="316" text-anchor="middle" class="relation">GameState 复制</text>
+  <text x="640" y="467" text-anchor="middle" class="relation">复制</text>
+  <text x="680" y="410" class="relation">Pawn 副本</text>
+
+  <!-- Legend and dependency boundary -->
+  <g>
+    <rect x="40" y="830" width="1200" height="66" fill="#f8fafc" stroke="#9fb3c8" stroke-width="1.2"/>
+    <text x="58" y="853" class="legend">图例：</text>
+    <line x1="112" y1="849" x2="170" y2="849" stroke="#333333" stroke-width="1.4" marker-end="url(#arrow)"/>
+    <text x="180" y="853" class="legend">控制 / 持有</text>
+    <line x1="290" y1="849" x2="348" y2="849" stroke="#333333" stroke-width="1.4" stroke-dasharray="6 4" marker-end="url(#openArrow)"/>
+    <text x="358" y="853" class="legend">复制 / 观察</text>
+    <path d="M540,849 L548,843 L556,849 L548,855 z" fill="#ffffff" stroke="#333333" stroke-width="1.2"/>
+    <text x="566" y="853" class="legend">Outer 持有关系</text>
+    <text x="58" y="879" class="legend">测试模块边界：ProjectAegisTests（DeveloperTool）-&gt; FunctionalTesting + Engine + Core + CoreUObject；不依赖 ProjectAegis Runtime 类型。</text>
+  </g>
+</svg>

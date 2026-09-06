@@ -11,6 +11,7 @@ description: UE 5.8 C++ 客户端工程学习、Project Aegis 与面试展示入
 
 ## 最新学习日志
 
+- [Day 14：Gameplay Framework 周整合与职责边界](/journal/2026-09-06-ue-day14-gameplay-framework-integration)
 - [Day 13：Spawn、重生与可重入初始化](/journal/2026-08-29-ue-day13-spawn-respawn-initialization)
 - [Day 12：Pawn、Character 与 Possession：从 Character 切换到 Observer Pawn](/journal/2026-08-18-ue-day12-pawn-character-possession)
 - [Day 11：PlayerController 与 PlayerState 的玩家边界](/journal/2026-08-14-ue-day11-playercontroller-playerstate)

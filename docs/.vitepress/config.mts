@@ -119,6 +119,7 @@ export default withMermaid({
             { text: 'Day 11 · PlayerController 与 PlayerState 的玩家边界', link: '/journal/2026-08-14-ue-day11-playercontroller-playerstate' },
             { text: 'Day 12 · Pawn、Character 与 Possession', link: '/journal/2026-08-18-ue-day12-pawn-character-possession' },
             { text: 'Day 13 · Spawn、重生与可重入初始化', link: '/journal/2026-08-29-ue-day13-spawn-respawn-initialization' },
+            { text: 'Day 14 · Gameplay Framework 周整合与职责边界', link: '/journal/2026-09-06-ue-day14-gameplay-framework-integration' },
             { text: '博客写作流程', link: '/journal/writing' }
           ]
         }

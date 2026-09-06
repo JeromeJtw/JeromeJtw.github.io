@@ -53,3 +53,6 @@ Thumbs.db
 
 # Allow the reviewed Day 13 Spawn/respawn/initialization demo to be published by GitHub Pages.
 !docs/public/media/ue/day13/day13-spawn-respawn-initialization.mp4
+
+# Allow the reviewed Week 2 Gameplay Framework milestone video to be published by GitHub Pages.
+!docs/public/media/ue/day14/day14_GameplayFramework_20260904.mp4

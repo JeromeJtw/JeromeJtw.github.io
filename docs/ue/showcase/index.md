@@ -33,6 +33,7 @@ outline: deep
 - `UAegisDeveloperSettings`、UHT 反射生成物、Config/蓝图默认值与四对象 CDO 实验；
 - `TObjectPtr`、裸指针、`TWeakObjectPtr`、`TSoftObjectPtr`、Outer、Root 与 GC 可达性实验；
 - `AAegisLifecycleProbe`、`UHealthComponent`、单次 Tick、运行时 Spawn 与多类 EndPlay 路径实验；
+- Gameplay Framework 职责实例图、`ProjectAegisTests` Functional Test、Spawn/Possess 回归和全新 Clone 恢复验证；
 - 主分支与远端同步、提交可回滚。
 
 ## 精选工程入口
@@ -47,7 +48,7 @@ outline: deep
 | 调试与排障 | [Bug 与排障](/ue/engineering/debugging/) | 已建立方法与证据规范 |
 | 性能分析 | [Unreal Insights](/ue/engineering/performance/) | 待性能课程形成案例 |
 | 源码深度 | [Lyra / GAS 源码阅读](/ue/source-reading/) | 待课程推进 |
-| 演示证据 | [演示视频](/ue/videos/) | Day 01～Day 05 关键证据视频已嵌入文章 |
+| 演示证据 | [演示视频](/ue/videos/) | Day 01～Day 14 关键证据视频已嵌入文章 |
 | 面试表达 | [UE 面试与项目复盘](/ue/interviews/) | 按课程持续积累 |
 
 ## 后续里程碑
